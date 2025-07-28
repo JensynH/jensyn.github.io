@@ -1,0 +1,693 @@
+/* Return link styling */
+.return-container {
+    position: absolute;
+    top: 50px;
+    right: 50px; 
+    padding: 5px;
+    border: 2px solid #e6c7b2;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for depth effect */
+}
+
+.return-link {
+    text-decoration: none; /* Remove underline */
+    color: #e6c7b2; /* Text color */
+    font-size: 18px; /* Size of the text */
+    font-weight: bold; /* Make it bold */
+    text-align: center; /* Center align text within the container */
+    display: block; /* Block-level element to fill the container */
+    padding: 5px 10px; /* Padding inside the link */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.return-link:hover {
+    color: #c5532c; /* Text color on hover */
+}
+
+#glowing-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(circle, #c3a997, transparent 70%);
+    z-index: 1000;
+    mix-blend-mode: screen;
+    transition: transform 0.1s ease-out;
+}
+
+/* Index */
+#main-menu {
+    background-color: #2a1d1b;
+    color: #e6c7b2;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Decorative border around the screen */
+#main-menu::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 5px solid #e6c7b2;
+    border-radius: 15px; /* Rounded corners */
+    pointer-events: none; /* Prevent border from interfering with interactions */
+}
+
+.menu-container {
+    text-align: center;
+    z-index: 1;
+}
+
+.menu-title {
+    font-size: 64px;
+    margin-bottom: 20px;
+    color: #e6c7b2;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.menu {
+    margin-top: 20px;
+}
+
+.menu li {
+    margin: 10px 0;
+    list-style-type: none;
+}
+
+.menu a {
+    font-size: 24px;
+    color: #e6c7b2;
+    transition: color 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #c5532c;
+}
+
+/* About */
+#about {
+    background-color: #2a1d1b;
+    color: #e6c7b2;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#about::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 5px solid #e6c7b2;
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    position: relative;
+}
+
+.about-title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #e6c7b2;
+    flex: 0 0 30%;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.about-description p {
+    font-size: 20px;
+    color: #e6c7b2;
+    flex: 0 0 60%;
+    line-height: 1.6;
+    padding-left: 20px;
+}
+
+/* Dividing Line */
+.divider-line {
+    width: 2px;
+    background-color: #e6c7b2;
+    height: 80%;
+    position: absolute;
+    left: 25%;
+}
+
+/* Portfolio */
+#portfolio {
+    background-color: #2a1d1b;
+    color: #e6c7b2;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+#portfolio::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 5px solid #e6c7b2;
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+.portfolio-container {
+    position: static;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio h1 {
+    font-size: 48px;
+    text-align: center;
+    color: #ad65d7;
+    margin-bottom: 40px;
+}
+
+.portfolio-grids {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-item {
+    position: absolute;
+    background-color: #3b2523;
+    border: 2px solid #e6c7b2;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item a {
+    display: block; /* Ensure the link covers the entire item */
+    height: 100%; /* Ensure the link covers the entire item */
+    width: 100%; /* Ensure the link covers the entire item */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-item:hover .portfolio-title {
+    opacity: 1;
+}
+
+.portfolio-item:nth-child(1) { transform: translate(0, -200px); }
+.portfolio-item:nth-child(2) { transform: translate(200px, -100px); }
+.portfolio-item:nth-child(3) { transform: translate(200px, 100px); }
+.portfolio-item:nth-child(4) { transform: translate(0, 200px); }
+.portfolio-item:nth-child(5) { transform: translate(-200px, 100px); }
+.portfolio-item:nth-child(6) { transform: translate(-200px, -100px); }
+
+.portfolio-title {
+    color: #e6c7b2;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0; /* Hidden initially */
+    position: absolute; /* Position relative to its parent */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to center */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+
+/* Qualifications */
+/* Base styling for the qualifications page */
+#qualifications {
+    margin: 0;
+    padding: 0;
+    background-color: #2a1d1b;
+    color: #e6c7b2;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    text-align: center;
+}
+
+#qualifications::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 5px solid #e6c7b2;
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+/* Style for the hint message */
+.link-hint {
+    font-size: 16px;
+    color: #d79c65;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.qualifications-container a {
+    color: #e6c7b2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.qualifications-container a:hover {
+    color: #c5532c;
+}
+
+/* Qualifications title styling */
+.qualifications h1 {
+    font-size: 36px;
+    color: #ad65d7;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.qualifications h1::after {
+    content: '';
+    display: block;
+    width: 50%; /* Adjust width to your preference */
+    height: 2px;
+    background-color: #d79c65;
+    margin: 10px auto 30px; /* Space around the line */
+}
+
+/* Horizontal timeline styling */
+.stats {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0; /* Adds margin to the top and bottom of the list */
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+    width: 100%;
+    position: relative;
+    overflow: hidden; /* Prevents items from overflowing */
+}
+
+/* Line through the timeline */
+.timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #d79c65;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+/* Individual items in the timeline */
+.stat-item {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    padding: 80px 10px; /* Increased padding to ensure circles don't overlap with titles */
+    position: relative;
+    margin: 0 30px;
+    vertical-align: top; /* Ensures the items are aligned to the top */
+}
+
+.stat-item::before {
+    content: '';
+    position: absolute;
+    top: 50px; /* Reset top to 0 for better alignment */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #d79c65;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #2a1d1b;
+    z-index: 2;
+}
+
+.stat-title {
+    font-size: 18px;
+    color: #e6c7b2;
+    margin-top: 30px; /* Added margin-top to move titles below circles */
+    cursor: pointer;
+}
+
+.stat-value {
+    font-size: 16px;
+    color: #ad65d7;
+    display: none;
+    margin-top: 10px;
+}
+
+.stat-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+/* Hover and active states for timeline items */
+.stat-item:hover .stat-title {
+    color: #d79c65;
+}
+
+.stat-item.active .stat-value {
+    display: block;
+}
+
+/* Style for the resume button */
+.resume-section {
+    margin-top: 30px;
+    text-align: center; /* Centered for better alignment */
+}
+
+.resume-section a {
+    display: inline-block;
+    padding: 10px 20px; /* Adjust padding for a rectangular shape */
+    font-size: 18px;
+    color: #e6c7b2;
+    border: 2px solid #e6c7b2; /* Border color to match the theme */
+    text-decoration: none;
+    border-radius: 5px; /* Slightly rounded corners for the rectangle */
+    transition: background-color 0.3s ease;
+}
+
+.resume-section a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+
+/* Services */
+#services {
+    margin: 0;
+    padding: 0;
+    background-color: #2a1d1b;
+    color: #e6c7b2;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#services::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 5px solid #e6c7b2;
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+/* Header styling */
+.services-header {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+    color: #e6c7b2;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 300px;
+}
+
+.services-header::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: #d79c65;
+    margin: 10px auto;
+}
+
+/* Card container styling */
+.services-container {
+    width: 90%;
+    max-width: 2400px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+}
+
+/* Card styling */
+.quest {
+    flex: 0 0 auto;
+    border: 2px solid #e6c7b2;
+    border-radius: 10px;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0;
+}
+
+.quest:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.quest-title {
+    font-size: 20px;
+    color: #d79c65;
+    margin-bottom: 10px;
+}
+
+.quest-description {
+    font-size: 14px;
+    color: #e6c7b2;
+    margin-bottom: 20px;
+}
+
+.quest-details {
+    font-size: 14px;
+    color: #d79c65;
+}
+
+.quest-details span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Ai Portion - Game */
+/* General styles */
+#game-body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    background-color: #2a1d1b;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Style for the text boxes */
+.text-box {
+    border: 2px solid #e6c7b2; /* Border color matching the theme */
+    padding: 15px;
+    color: #e6c7b2; /* Text color */
+    font-family: 'Courier New', Courier, monospace; /* Font matching the theme */
+    border-radius: 10px; /* Rounded corners */
+    width: fit-content; /* Width adjusts to the content */
+    max-width: 80%; /* Prevents the box from getting too wide */
+    margin: 20px auto; /* Centering with top and bottom margin */
+    text-align: center; /* Center text */
+}
+
+/* Game container styling */
+#game-container {
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+/* Start and end screens */
+.hidden {
+    display: none;
+}
+
+/* Game canvas */
+#game {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border: 2px solid #e6c7b2;
+}
+
+/* Objective message */
+#objective {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    z-index: 10;
+    font-family: 'Courier New', Courier, monospace;
+    color: #e6c7b2;
+}
+
+/* Player styling */
+#player {
+    position: absolute;
+    left: 50px;
+    bottom: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #e6c7b2;
+    border-radius: 5px;
+}
+
+/* Button styling */
+#button {
+    position: absolute;
+    right: 140px;
+    bottom: 0;
+    width: 80px;
+    height: 30px;
+    border: 2px solid #e6c7b2;
+    border-radius: 5px;
+    animation: jump 2s infinite;
+}
+
+/* Obstacle styling */
+#obstacle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #c5532c;
+    animation: move-left 2s infinite linear;
+}
+
+/* Animation for button "jump" */
+@keyframes jump {
+    0%, 100% { bottom: 0; }
+    60% { bottom: 60px; }
+}
+
+/* Animation for obstacle moving left */
+@keyframes move-left {
+    0% { right: 0; }
+    100% { right: 100%; }
+}
+
+/* Start screen buttons */
+#start-screen button {
+    background-color: #2a1d1b;
+    border: 2px solid #e6c7b2;
+    color: #e6c7b2;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Hover effect for start screen buttons */
+#start-screen button:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    color: #c5532c;
+}
+
+/* Disabled style for start screen buttons */
+#start-screen button:disabled {
+    background-color: #555; /* Gray for disabled state */
+    cursor: not-allowed;
+}
+
+/* Change Theme button */
+#change-theme-button {
+    background-color: #2a1d1b;
+    border: 2px solid #e6c7b2;
+    color: #e6c7b2;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+    display: none; /* Hidden initially */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Hover effect for Change Theme button */
+#change-theme-button:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    color: #c5532c;
+}
+
+/* Visible style when showing Change Theme button */
+#change-theme-button.show {
+    display: inline-block;
+}

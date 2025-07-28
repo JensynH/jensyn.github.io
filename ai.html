@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Theme</title>
+    <link id="theme-stylesheet" rel="stylesheet" href="style1.css"> <!-- Default stylesheet -->
+    <script>
+        // Function to toggle between stylesheets
+        function toggleTheme() {
+            const stylesheet = document.getElementById('theme-stylesheet');
+            const currentTheme = stylesheet.getAttribute('href');
+
+            if (currentTheme === 'style1.css') {
+                stylesheet.setAttribute('href', 'style2.css');
+            } else {
+                stylesheet.setAttribute('href', 'style1.css');
+            }
+            
+            // Optionally, you can store the selected theme in localStorage
+            localStorage.setItem('theme', stylesheet.getAttribute('href'));
+        }
+
+        // Load the theme from localStorage on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.getElementById('theme-stylesheet').setAttribute('href', savedTheme);
+            }
+        });
+    </script>
+</head>
+
+<body id="game-body">
+    <!-- Return link to main menu -->
+    <div class="return-container">
+        <a href="index.html" class="return-link">Return</a>
+    </div>
+    <!-- Game Container -->
+    <div id="game-container">
+        <!-- Start Screen -->
+        <div id="start-screen">
+            <p class="text-box">Do you want to change the theme of this website?</p>
+            <button id="start-yes">Yes</button>
+            <button id="start-no">No</button>
+        </div>
+
+        <!-- Game Canvas -->
+        <div id="game" class="hidden">
+            <p id="objective">Catch the button! (Hint: You can't win.)</p>
+            <div id="player"></div>
+            <div id="button"></div>
+            <div id="obstacle"></div>
+        </div>
+
+        <!-- End Screen -->
+        <div id="end-screen" class="hidden">
+            <p class="text-box" id="end-message">Dang, looks like you can't change the theme...</p>
+            <p class="text-box hidden" id="kidding-message" class="hidden">...Just kidding! Here's the button.</p>
+            <button id="change-theme-button" class="hidden">Change Theme</button>
+        </div>
+    </div>
+
+    <!-- Glowing circle for custom cursor -->
+    <div id="glowing-cursor"></div>
+
+    <!-- Script for Game Logic -->
+    <script src="functions.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link id="theme-stylesheet" rel="stylesheet" href="style1.css"> <!-- Default stylesheet -->
+    <script>
+        // Function to toggle between stylesheets
+        function toggleTheme() {
+            const stylesheet = document.getElementById('theme-stylesheet');
+            const currentTheme = stylesheet.getAttribute('href');
+
+            if (currentTheme === 'style1.css') {
+                stylesheet.setAttribute('href', 'style2.css');
+            } else {
+                stylesheet.setAttribute('href', 'style1.css');
+            }
+
+            // Optionally, you can store the selected theme in localStorage
+            localStorage.setItem('theme', stylesheet.getAttribute('href'));
+        }
+
+        // Load the theme from localStorage on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.getElementById('theme-stylesheet').setAttribute('href', savedTheme);
+            }
+        });
+    </script>
+</head>
+
+<body id="services">
+    <!-- Return link to main menu -->
+    <div class="return-container">
+        <a href="index.html" class="return-link">Return</a>
+    </div>
+
+    <!-- Services container in quest log style -->
+    <div class="services-container">
+        <div class="services-header">Services</div>
+
+        <div class="quest">
+            <div class="quest-title">Log 1: Art Instructor</div>
+            <div class="quest-description">
+                I volunteered as an art instructor at my former elementary school, where I designed and led creative art
+                lessons for young students.
+                My role involved developing engaging lesson plans, introducing foundational art concepts, and guiding
+                children through various
+                artistic techniques and projects. Through this experience, I aimed to foster creativity, encourage
+                self-expression, and build
+                confidence in the students. It was a rewarding opportunity to give back to the school community that
+                shaped my own early education,
+                while also helping to inspire a new generation of young artists.
+            </div>
+            <div class="quest-details">
+                <span>Difficulty: Medium</span>
+                <span>Duration: 1 Year</span>
+                <span>Reward: +30 Patience</span>
+            </div>
+        </div>
+
+        <div class="quest">
+            <div class="quest-title">Log 2: Ernie Banks Statue</div>
+            <div class="quest-description">
+                As a contributing sculptor for the Ernie Banks statue project at Booker T. Washington HSPVA, I had the
+                unique opportunity to sculpt
+                the shoes of the statue. This work was part of a larger collaborative effort to honor the legendary
+                Chicago Cubs player and celebrate
+                his enduring legacy in sports and culture. The experience taught me the value of teamwork in a creative
+                context and reinforced my
+                belief in the power of public art to foster community spirit and preserve cultural heritage. By
+                sculpting part of this iconic statue,
+                I was able to give back to the community through art and contribute to a piece that stands as a
+                testament to perseverance, hope, and
+                excellence.
+            </div>
+            <div class="quest-details">
+                <span>Difficulty: Hard</span>
+                <span>Duration: 5 Weeks</span>
+                <span>Reward: +40 Collaboration</span>
+            </div>
+        </div>
+
+        <div class="quest">
+            <div class="quest-title">Log 3: Operation Kindness Charity</div>
+            <div class="quest-description">
+                I donated original dog drawings to support a fundraising initiative for Operation Kindness, a leading
+                no-kill animal shelter. The artwork
+                was created specifically to help raise awareness and funds for the organization's mission of providing
+                care and finding homes for homeless
+                pets. By contributing my artistic skills to this cause, I aimed to engage the community and encourage
+                donations through visually appealing
+                and heartfelt illustrations. This experience allowed me to leverage my creativity in a meaningful way,
+                supporting a cause I am passionate
+                about and contributing to the welfare of animals in need.
+            </div>
+            <div class="quest-details">
+                <span>Difficulty: Easy to Medium</span>
+                <span>Duration: 3 Weeks</span>
+                <span>Reward: +30 Community Impact</span>
+            </div>
+        </div>
+
+        <div class="quest">
+            <div class="quest-title">Log 4: Arty for The Planet</div>
+            <div class="quest-description">
+                I contributed two large-scale chalk pieces to the Arty for the Planet project at the Lacerte Family Zoo,
+                a creative initiative that raised
+                awareness about environmental conservation through art. These pieces were designed to engage viewers,
+                featuring vibrant depictions of
+                endangered species and their habitats. By using art as a medium to convey a powerful message, I aimed to
+                inspire a deeper connection
+                between people and the natural world, bringing more attention to the need for conservation efforts. This
+                experience allowed me to use my
+                artistic skills to contribute to a cause I am passionate about and to bring visibility to environmental
+                issues in a dynamic and accessible
+                way.
+            </div>
+            <div class="quest-details">
+                <span>Difficulty: Easy</span>
+                <span>Duration: 1 Day</span>
+                <span>Reward: +10 Volunteer</span>
+            </div>
+        </div>
+    </div>
+    <!-- Glowing circle for custom cursor -->
+    <div id="glowing-cursor"></div>
+
+    <!-- JavaScript to move the cursor -->
+    <script src="functions.js"></script>
+</body>
+
+</html>

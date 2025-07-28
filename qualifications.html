@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualifications</title>
+    <link id="theme-stylesheet" rel="stylesheet" href="style1.css"> <!-- Default stylesheet -->
+    <script>
+        // Function to toggle between stylesheets
+        function toggleTheme() {
+            const stylesheet = document.getElementById('theme-stylesheet');
+            const currentTheme = stylesheet.getAttribute('href');
+
+            if (currentTheme === 'style1.css') {
+                stylesheet.setAttribute('href', 'style2.css');
+            } else {
+                stylesheet.setAttribute('href', 'style1.css');
+            }
+            
+            // Optionally, you can store the selected theme in localStorage
+            localStorage.setItem('theme', stylesheet.getAttribute('href'));
+        }
+
+        // Load the theme from localStorage on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.getElementById('theme-stylesheet').setAttribute('href', savedTheme);
+            }
+        });
+    </script>
+</head>
+<body id="qualifications">
+    <!-- Return link to main menu -->
+     <div class="return-container">
+        <a href="index.html" class="return-link">Return</a>
+     </div>
+
+    <!-- Qualifications container -->
+    <div class="qualifications-container">
+        <h1>Qualifications</h1>
+        <p class="link-hint">Hint: Click on the words to learn more!</p>
+        <ul class="stats">
+            <li class="stat-item">
+                <span class="stat-title">Areas of Interest</span>
+                <span class="stat-value">
+                    <ul class="stat-list">
+                        <li><a href="https://www.geeksforgeeks.org/front-end-development/" target="_blank">Front-end Development</a></li>
+                        <li><a href="https://www.geeksforgeeks.org/software-engineering-software-design-process/" target="_blank">Software Design</a></li>
+                        <li><a href="https://www.coursera.org/articles/computer-graphics" target="_blank">Computer Graphics</a></li>
+                        <li><a href="https://www.freecodecamp.org/news/what-is-game-development/" target="_blank">Game Development</a></li>
+                    </ul>
+                </span>
+            </li>
+            <li class="stat-item">
+                <span class="stat-title">Technical Skills</span>
+                <span class="stat-value">
+                    <ul class="stat-list">
+                        <li><a href="https://www.freecodecamp.org/news/what-is-game-development/" target="_blank">UI/UX</a></li>
+                        <li><a href="https://www.rasmussen.edu/degrees/design/blog/what-is-graphic-design/" target="_blank">Graphic Design</a></li>
+                        <li><a href="https://www.w3schools.com/dsa/dsa_intro.php" target="_blank">Data Structures and Algorithms</a></li>
+                        <li><a href="https://www.geeksforgeeks.org/version-control-systems/" target="_blank">Version Control (Git/Github)</a></li>
+                    </ul>
+                </span>
+            </li>
+            <li class="stat-item">
+                <span class="stat-title">Languages</span>
+                <!-- Nested list for the "Languages" section -->
+                <span class="stat-value">
+                    <ul class="stat-list">
+                        <li><a href="https://www.w3schools.com/cpp/" target="_blank">C++</a></li>
+                        <li><a href="https://www.w3schools.com/java/" target="_blank">Java</a></li>
+                        <li><a href="https://www.w3schools.com/python/" target="_blank">Python</a></li>
+                        <li><a href="https://www.codecademy.com/catalog/language/html-css" target="_blank">HTML/CSS</a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">Javascript</a></li>
+                        <li><a href="https://www.haskell.org/" target="_blank">Haskell</a></li>
+                    </ul>
+                </span>
+            </li>
+            <li class="stat-item">
+                <span class="stat-title">Creative Skills</span>
+                <span class="stat-value">
+                    <ul class="stat-list">
+                        <li><a href="https://www.blender.org/" target="_blank">Blender</a></li>
+                        <li><a href="https://procreate.com/" target="_blank">Procreate</a></li>
+                        <li><a href="https://www.adobe.com/products/photoshop.html" target="_blank">Adobe Photoshop</a></li>
+                    </ul>
+                </span>
+            </li>
+        </ul>
+        <div class="resume-section">
+            <a href="Huynh_Jensyn_Resume.pdf" download>Download Resume</a>
+        </div>
+    </div>
+    <!-- Glowing circle for custom cursor -->
+    <div id="glowing-cursor"></div>
+
+    <!-- JavaScript to move the cursor -->
+    <script src="functions.js"></script>
+</body>
+</html>

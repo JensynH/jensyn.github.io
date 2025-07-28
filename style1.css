@@ -1,0 +1,620 @@
+/* 
+Art Citations:
+https://www.artstation.com/artwork/Bk16L9
+https://www.artstation.com/artwork/4N8PV4
+https://www.artstation.com/artwork/y4k2mO
+https://www.artstation.com/artwork/kNlD3K
+https://www.artstation.com/artwork/NqGxVq
+*/
+
+/* Return link styling */
+.return-container {
+    position: absolute;
+    top: 50px; /* Position it from the top */
+    right: 50px; /* Position it from the right */
+    padding: 5px;
+    background-color: #04051b; /* Semi-transparent background for the box */
+    border: 2px solid #d79c65; /* Border color to match the theme */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for depth effect */
+}
+
+.return-link {
+    text-decoration: none; /* Remove underline */
+    color: #d79c65; /* Text color */
+    font-size: 18px; /* Size of the text */
+    font-weight: bold; /* Make it bold */
+    text-align: center; /* Center align text within the container */
+    display: block; /* Block-level element to fill the container */
+    padding: 5px 10px; /* Padding inside the link */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.return-link:hover {
+    color: #fff; /* Text color on hover */
+    background-color: #ad65d7 20%; /* Background color on hover */
+}
+
+
+/* Pulsing keyframes */
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 20px #d79c65,
+            0 0 30px #d79c65,
+            0 0 40px #d79c65,
+            0 0 50px #d79c65;
+    }
+    50% {
+        text-shadow: 
+            0 0 30px #c27dea,
+            0 0 40px #7a67ba,
+            0 0 50px #584391,
+            0 0 60px #0c0e32;
+    }
+}
+
+#glowing-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(circle, #d79c65, transparent 70%);
+    z-index: 1;
+    mix-blend-mode: screen;
+    transition: transform 0.1s ease-out;
+}
+
+/* Index */
+#main-menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+    background-color: #0d0b11;
+    background-image: url('menu-background.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    color: #fff;
+    font-family: 'Garamond', sans-serif;
+    cursor: none;
+    overflow: hidden;
+}
+
+.menu-container {
+    margin-right: 220px;
+    margin-top: 120px;
+    text-align: center;
+    text-shadow: 0 0 100px #000000;
+}
+
+.menu-title {
+    margin-left: 24px;
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow:
+        0 0 25px #d79c65;
+    animation: pulse 5s infinite;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 10px 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #ad65d7;
+    text-shadow:
+        0 0 20px #ad65d7;
+}
+
+/* About */
+#about {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: #04051b;
+    background-image: url('about-background.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    color: #fff;
+    font-family: 'Garamond', sans-serif;
+}
+
+.about-container {
+    position: absolute;
+    right: 220px; /* Position the container from the right */
+    top: 200px; /* Position the container from the top */
+    width: 600px; /* Set the width of the container */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    border: 2px solid #d79c65; /* Border color to match the theme */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for depth effect */
+}
+
+.about-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.about-description p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #fff;
+    text-align: center;
+}
+
+/* Portfolio */
+#portfolio {
+    margin: 0;
+    padding: 0;
+    background-color: #000103;
+    background-image: url('portfolio-background.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    font-family: 'Garamond', sans-serif;
+}
+
+.portfolio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 100px;
+}
+
+.portfolio h1 {
+    font-size: 48px;
+    text-align: center;
+    color: #ad65d7;
+    margin-bottom: 40px;
+}
+
+.portfolio-grids {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #d28fdd; /* Border color matching the theme */
+    border-radius: 8px; /* Rounded corners */
+    width: 100%; /* Adjust as necessary */
+    height: 200px; /* Set a fixed height for consistency */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.portfolio-item a {
+    display: block; /* Ensure the link covers the entire item */
+    height: 100%; /* Ensure the link covers the entire item */
+    width: 100%; /* Ensure the link covers the entire item */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-item:hover .portfolio-title {
+    opacity: 1;
+}
+
+/* Individual item backgrounds */
+.item1 {
+    background-image: url('portfolio-item-image.jpg');
+}
+
+.item2 {
+    background-image: url('portfolio-item-image.jpg');
+}
+
+.item3 {
+    background-image: url('portfolio-item-image.jpg');
+}
+
+.item4 {
+    background-image: url('portfolio-item-image.jpg');
+}
+
+.portfolio-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Qualifications */
+#qualifications {
+    margin: 0;
+    padding: 0;
+    background-color: #04051b;
+    color: #fff;
+    font-family: 'Garamond', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-image: url('qualifications-background.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/* Style for the hint message */
+.link-hint {
+    font-size: 16px;
+    color: #7a67ba;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.qualifications-container {
+    width: 60%;
+    max-width: 550px;
+    background-color: #080b2e;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 100px;
+}
+
+.qualifications-container a {
+    color: #ad65d7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.qualifications-container a:hover {
+    color: #d79c65
+}
+
+.qualifications h1 {
+    font-size: 36px;
+    text-align: center;
+    color: #4b387e;
+    margin-bottom: 20px;
+}
+
+/* Calling qualifications 'stats' like in a video game */
+
+.stats {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+}
+
+.stat-title {
+    font-size: 18px;
+    color: #f0f0f0;
+}
+
+.stat-value {
+    font-size: 18px;
+    color: #ad65d7;
+    text-align: right;
+}
+
+.stat-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;   /* Remove bullet points */
+    text-align: right;  /* Align list items to the right */
+}
+
+.resume-section {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.resume-section a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #44399c;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.resume-section a:hover {
+    background-color: #ad65d7;
+}
+
+/* Services */
+#services {
+    margin: 0;
+    padding: 0;
+    background-color: #04051b;
+    color: #fff;
+    font-family: 'Garamond', sans-serif;
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    overflow-y: scroll; /* Scrollable content */
+    background-image: linear-gradient(to top, #04051b 5%, transparent 100%), url('services-background.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.services-container {
+    top: 20px;
+    width: 800px;
+    max-width: 800px;
+    background-color: #080b2e;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-top: 550px; /* Space at the top for art */
+    position: relative;
+    overflow: hidden;
+}
+
+.services-header {
+    text-align: center;
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.quest {
+    background-color: #0d1142;
+    border: 1px solid #d79c65;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.quest:hover {
+    background-color: #151554;
+}
+
+.quest-title {
+    font-size: 24px;
+    color: #d79c65;
+    margin-bottom: 10px;
+}
+
+.quest-description {
+    font-size: 16px;
+    color: #ddd;
+    margin-bottom: 10px;
+}
+
+.quest-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #b0b0b0;
+}
+
+.quest-details span {
+    background-color: #44399c;
+    padding: 3px 8px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+/* Ai Portion - Game */
+/* General styles */
+#game-body {
+    margin: 0;
+    padding: 0;
+    font-family: Garamond, sans-serif;
+    font-size: 24px;
+    background-color: #04051b;
+    background-image: url('minigame-background.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Style for the text boxes */
+.text-box {
+    border: 2px solid #d28fdd; /* Border color matching the theme */
+    padding: 15px;
+    background-color: rgba(20, 20, 40, 0.9); /* Semi-transparent dark background */
+    color: #ffffff; /* Text color */
+    font-family: 'Garamond', sans-serif; /* Font matching the theme */
+    border-radius: 10px; /* Rounded corners */
+    width: fit-content; /* Width adjusts to the content */
+    max-width: 80%; /* Prevents the box from getting too wide */
+    margin: 20px auto; /* Centering with top and bottom margin */
+    text-align: center; /* Center text */
+}
+
+/* Game container styling */
+#game-container {
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+/* Start and end screens */
+.hidden {
+    display: none;
+}
+
+/* Game canvas */
+#game {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: rgba(20, 20, 40, 0.9);
+    overflow: hidden;
+    border: 2px solid #ad65d7;
+}
+
+/* Objective message */
+#objective {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    z-index: 10;
+}
+
+/* Player styling */
+#player {
+    position: absolute;
+    left: 50px;
+    bottom: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #ad65d7;
+    border-radius: 5px;
+}
+
+/* Button styling */
+#button {
+    position: absolute;
+    right: 140px;
+    bottom: 0;
+    width: 80px;
+    height: 30px;
+    background-color: #ad65d7;
+    border-radius: 5px;
+    animation: jump 2s infinite;
+}
+
+/* Obstacle styling */
+#obstacle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #f00;
+    animation: move-left 2s infinite linear;
+}
+
+/* Animation for button "jump" */
+@keyframes jump {
+    0%, 100% { bottom: 0; }
+    60% { bottom: 60px; }
+}
+
+/* Animation for obstacle moving left */
+@keyframes move-left {
+    0% { right: 0; }
+    100% { right: 100%; }
+}
+
+/* Start screen buttons */
+#start-screen button {
+    background-color: #59498b; /* Match the theme color */
+    border: 2px solid #d28fdd;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover effect for start screen buttons */
+#start-screen button:hover {
+    background-color: #4b387e; /* Slightly darker shade for hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Disabled style for start screen buttons */
+#start-screen button:disabled {
+    background-color: #555; /* Gray for disabled state */
+    cursor: not-allowed;
+}
+
+/* Change Theme button */
+#change-theme-button {
+    background-color: #ad65d7; /* Match the theme color */
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+    display: none; /* Hidden initially */
+}
+
+/* Hover effect for Change Theme button */
+#change-theme-button:hover {
+    background-color: #8a4bd6; /* Slightly darker shade for hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Visible style when showing Change Theme button */
+#change-theme-button.show {
+    display: inline-block;
+}
